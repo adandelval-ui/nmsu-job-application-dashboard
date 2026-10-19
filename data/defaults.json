@@ -1,0 +1,52 @@
+{
+  "position": [
+    ["Department", "Communication Studies"],
+    ["College", "Arts & Sciences"],
+    ["Location", "Las Cruces, New Mexico"],
+    ["Minimum degree", "MA in Communication, Communication Studies, or closely related field by Aug. 16, 2027"],
+    ["Appointment", "Full-time, 9-month College Assistant Professor"],
+    ["Department contact", "Dr. Greg Armfield"]
+  ],
+  "teaching": ["4/4 teaching load", "Face-to-face courses", "8-week asynchronous courses", "Introduction to Communication Honors", "Communication General Education", "Internship / Practicum", "Medical Shadowing", "Communication Theory & Practice", "Organizational Communication", "Small Group Communication", "Persuasion", "Political Communication", "Culture / Intercultural Communication", "Deception", "Interpersonal Communication", "Leadership-related courses"],
+  "required": [
+    {"id":"req-letter","title":"Letter of Interest","desc":"Address teaching philosophy, professional goals, and interest in working in NMSU Communication Studies.","tag":"REQUIRED"},
+    {"id":"req-cv","title":"Curriculum Vitae","desc":"Use a teaching-focused CV that makes teaching breadth, modalities, course development, service, and outreach easy to see.","tag":"REQUIRED"},
+    {"id":"req-evidence","title":"Evidence of Teaching Effectiveness","desc":"Include evidence from both face-to-face and online environments.","tag":"REQUIRED"},
+    {"id":"req-multi","title":"Multicultural / Diverse Ways of Learning Statement","desc":"Explain how multicultural scholarship or diverse ways of thinking and learning have influenced your teaching.","tag":"REQUIRED"},
+    {"id":"req-refs","title":"Three Professional References","desc":"Provide contact information for three references. Letters are requested if you are selected for an interview.","tag":"REQUIRED"}
+  ],
+  "workflow": [
+    {"id":"w1","title":"Review the official posting end-to-end","desc":"Confirm requirements, duties, qualifications, and deadline language.","tag":"START"},
+    {"id":"w2","title":"Choose three references","desc":"Select people who can speak to teaching, student mentorship, professionalism, and disciplinary expertise.","tag":"HIGH"},
+    {"id":"w3","title":"Ask references for permission","desc":"Send them the posting and explain that letters are requested only if you advance to interview.","tag":"HIGH"},
+    {"id":"w4","title":"Audit your CV against the posting","desc":"Make teaching, modalities, course development, recruitment, service, and outreach easy to find.","tag":"HIGH"},
+    {"id":"w5","title":"Draft the Letter of Interest","desc":"Center teaching philosophy, generalist teaching range, professional goals, and why NMSU Communication Studies.","tag":"HIGH"},
+    {"id":"w6","title":"Build a Teaching Effectiveness Portfolio","desc":"Gather evaluations, peer observations, assignments, course materials, and evidence from face-to-face and online instruction.","tag":"HIGH"},
+    {"id":"w7","title":"Draft multicultural / diverse learning statement","desc":"Use concrete examples showing how scholarship and diverse ways of learning affect your teaching choices.","tag":"HIGH"},
+    {"id":"w8","title":"Map yourself to the course list","desc":"Identify courses you can teach immediately and courses you could credibly prepare.","tag":"MEDIUM"},
+    {"id":"w9","title":"Document online / asynchronous experience","desc":"Identify 8-week asynchronous teaching, LMS design, or online curriculum experience.","tag":"MEDIUM"},
+    {"id":"w10","title":"Document service, outreach, and recruitment","desc":"Translate coordination, program-building, student support, outreach, and recruitment into faculty-relevant language.","tag":"MEDIUM"},
+    {"id":"w11","title":"Proofread the full application package","desc":"Check dates, titles, claims, course names, and consistent emphasis across all documents.","tag":"MEDIUM"},
+    {"id":"w12","title":"Complete the NMSU electronic application","desc":"The electronic application is the official qualifying document.","tag":"FINAL"},
+    {"id":"w13","title":"Attach every required document","desc":"Verify each attachment opens correctly and is the intended final version.","tag":"FINAL"},
+    {"id":"w14","title":"Submit by Jan. 3, 2027 at 11:59 PM MT","desc":"Do not rely on the later Jan. 14 system closing date.","tag":"DEADLINE"},
+    {"id":"w15","title":"Save submission confirmation","desc":"Keep a copy of the confirmation and the exact documents submitted.","tag":"AFTER"}
+  ],
+  "fit": [
+    {"id":"fit-degree","criterion":"MA in Communication / related field by hire","evidence":"Available academic documentation indicates completed master's-level graduate coursework is being applied toward the Ph.D.; verify the exact degree title, institution, and date from your CV/transcript.","status":"partial","label":"Verify"},
+    {"id":"fit-breadth","criterion":"Broad Communication Studies knowledge","evidence":"Graduate COMM coursework includes research methods, ethnicity/racism & communication, intercultural communication, communication theory, interpersonal communication, and nonverbal communication.","status":"strong","label":"Strong"},
+    {"id":"fit-service","criterion":"Service / outreach / collaboration","evidence":"AIALA coordination demonstrates interdisciplinary collaboration, program coordination, communication, and public-policy-related work.","status":"strong","label":"Strong"},
+    {"id":"fit-scholarship","criterion":"Scholarly engagement","evidence":"Available documentation notes multiple publications and conference presentations, including a 2025 IEEE FIE publication.","status":"strong","label":"Supporting asset"},
+    {"id":"fit-teaching","criterion":"Effective collegiate teaching","evidence":"Add your CV, teaching evaluations, syllabi, assignments, peer observations, and other teaching evidence here.","status":"unknown","label":"Needs evidence"},
+    {"id":"fit-online","criterion":"8-week asynchronous teaching","evidence":"Not yet verified from the materials currently available in this project.","status":"unknown","label":"Unknown"},
+    {"id":"fit-honors","criterion":"Honors teaching","evidence":"Not yet verified from the materials currently available in this project.","status":"unknown","label":"Unknown"}
+  ],
+  "notes": [
+    ["letter","Letter of Interest ideas"],
+    ["evidence","Teaching evidence to gather"],
+    ["multicultural","Multicultural / diverse learning statement"],
+    ["references","Reference candidates"],
+    ["questions","Questions for ChatGPT"],
+    ["other","Other notes"]
+  ]
+}
