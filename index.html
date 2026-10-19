@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#8c0b2f" />
+  <title>NMSU College Assistant Professor Application Dashboard</title>
+  <link rel="stylesheet" href="css/app.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div id="app" class="shell">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">NMSU Application Command Center</div>
+        <h1>College Assistant Professor — Communication Studies</h1>
+        <p>Track requirements, documents, notes, evidence, references, deadlines, and submission progress from one page.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn light" target="_blank" rel="noopener" href="https://careers.nmsu.edu/jobs/college-assistant-professor-las-cruces-new-mexico-united-states-40795441-7607-4d36-9d3b-374a1ab3b141">Official posting ↗</a>
+        <button id="openChatBtn" class="btn dark">Open this ChatGPT chat</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>Job ID</span><strong>504154</strong></div>
+        <div class="stat"><span>Appointment</span><strong>9-month · Full-time</strong></div>
+        <div class="stat"><span>Teaching load</span><strong>4 / 4</strong></div>
+        <div class="stat"><span>Working deadline</span><strong>Jan. 3, 2027</strong></div>
+      </div>
+    </header>
+
+    <div id="cloudBanner" class="banner info"></div>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <section class="panel sticky-card">
+          <div class="eyebrow crimson">Progress</div>
+          <div class="progress-row"><span>Application</span><strong id="progressText">0%</strong></div>
+          <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+          <small id="progressDetail">0 tasks completed</small>
+          <hr />
+          <div class="eyebrow crimson">Deadline</div>
+          <div id="countdown" class="countdown">Calculating…</div>
+        </section>
+
+        <nav class="panel nav">
+          <a href="#overview">Overview</a>
+          <a href="#requirements">Required materials</a>
+          <a href="#workflow">Master checklist</a>
+          <a href="#fit">Your fit</a>
+          <a href="#documents">Documents</a>
+          <a href="#notes">Notes</a>
+          <a href="#settings">Settings / Sync</a>
+        </nav>
+      </aside>
+
+      <main>
+        <section id="overview" class="panel">
+          <div class="eyebrow crimson">Position overview</div>
+          <h2>Key information</h2>
+          <div class="deadline-card">
+            <div><small>Working submission deadline</small><strong>January 3, 2027 · 11:59 PM MT</strong></div>
+            <div id="deadlineClock"></div>
+          </div>
+          <div class="callout warning"><strong>Deadline discrepancy:</strong> the posting header lists January 14, 2027, but the application instructions say all materials must be submitted by January 3 at midnight Mountain Time. This dashboard uses January 3.</div>
+          <div class="info-grid" id="positionGrid"></div>
+          <h3>Teaching expectations</h3>
+          <div class="chips" id="teachingChips"></div>
+        </section>
+
+        <section id="requirements" class="panel">
+          <div class="eyebrow crimson">Required materials</div>
+          <h2>Submission components</h2>
+          <div id="requiredList" class="checklist"></div>
+        </section>
+
+        <section id="workflow" class="panel">
+          <div class="eyebrow crimson">Application workflow</div>
+          <h2>Master checklist</h2>
+          <p class="muted">Checkboxes sync to the cloud after you connect Supabase and sign in. Until then they save in this browser.</p>
+          <div id="workflowList" class="checklist"></div>
+        </section>
+
+        <section id="fit" class="panel">
+          <div class="section-head">
+            <div><div class="eyebrow crimson">Your fit snapshot</div><h2>Evidence mapped to the posting</h2></div>
+            <button id="editFitBtn" class="btn outline">Edit fit notes</button>
+          </div>
+          <p class="muted">This starter profile uses verified information already found in your academic materials. Add your actual CV/resume in Documents and update the fit notes as needed.</p>
+          <div class="table-wrap">
+            <table><thead><tr><th>Criterion</th><th>Your current evidence</th><th>Status</th></tr></thead><tbody id="fitBody"></tbody></table>
+          </div>
+        </section>
+
+        <section id="documents" class="panel">
+          <div class="eyebrow crimson">Document vault</div>
+          <h2>Application files</h2>
+          <p class="muted">When cloud sync is configured, files are stored in Supabase Storage so the same documents are available on your phone, iPad, and computers. Otherwise they are stored only in this browser.</p>
+          <div id="dropZone" class="drop-zone">
+            <div class="drop-icon">📁</div>
+            <strong>Drop files here</strong>
+            <span>CV, teaching evaluations, syllabi, statements, reference materials, and drafts</span>
+            <label class="btn dark" for="fileInput">Choose files</label>
+            <input id="fileInput" type="file" multiple hidden />
+          </div>
+          <div id="fileList" class="file-list"></div>
+        </section>
+
+        <section id="notes" class="panel">
+          <div class="eyebrow crimson">Notes & drafting</div>
+          <h2>Working notes</h2>
+          <div class="two-col" id="notesGrid"></div>
+        </section>
+
+        <section id="settings" class="panel">
+          <div class="eyebrow crimson">Settings</div>
+          <h2>Cloud sync & chat link</h2>
+          <div class="two-col">
+            <div class="settings-card">
+              <h3>Cloud sync</h3>
+              <div id="authState" class="muted">Checking configuration…</div>
+              <div id="authControls"></div>
+            </div>
+            <div class="settings-card">
+              <h3>Return to this ChatGPT chat</h3>
+              <label for="chatUrl">Conversation URL</label>
+              <input id="chatUrl" type="url" placeholder="https://chatgpt.com/c/..." />
+              <button id="saveChatBtn" class="btn dark">Save link</button>
+              <p class="muted small">Paste this conversation's URL once. If you are signed in with cloud sync, it follows you across devices.</p>
+            </div>
+          </div>
+          <div class="settings-card top-gap">
+            <h3>Backup</h3>
+            <p class="muted">Export your tasks, notes, fit notes, and chat-link settings as JSON. Uploaded files are not embedded in the JSON backup.</p>
+            <div class="button-row"><button id="exportBtn" class="btn outline">Export project backup</button><label class="btn outline" for="importInput">Import backup</label><input id="importInput" type="file" accept="application/json" hidden /></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>Designed for GitHub Pages + optional Supabase cross-device sync.</footer>
+  </div>
+
+  <dialog id="fitDialog">
+    <form method="dialog" class="dialog-card">
+      <h2>Edit fit notes</h2>
+      <div id="fitEditor"></div>
+      <div class="button-row end"><button value="cancel" class="btn outline">Cancel</button><button id="saveFitBtn" value="default" class="btn dark">Save</button></div>
+    </form>
+  </dialog>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
